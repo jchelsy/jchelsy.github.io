@@ -224,3 +224,122 @@ main #resume a:hover {  /* link on-hover */
   background: var(--color-palewhite);
   color: rgb(1, 30, 90);
 }
+
+
+
+/****** [Main] Portfolio Section ******/
+
+main #portfolio {  /* container */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin: 6vh 0;
+
+  /* Define the top margin (to account for sticky nav) */
+  scroll-margin-top: 10vh;
+}
+main #portfolio h1 {  /* section title */
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 600;
+  font-size: 8vh;
+  text-transform: uppercase;
+
+  margin: 2vh 0;
+}
+
+/*** Sort Filters ***/
+main #portfolio .sort-filters {  /* list of filters */
+  display: flex;
+  align-items: center;
+  margin: 4vh 0;
+}
+main #portfolio .sort-filters li {  /* each filter item */
+  margin: 2vh 2vh;
+}
+main #portfolio .sort-filters li a {  /* each filter item link */
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  color: #333;
+  background: #E3E3E3;
+  padding: 0.5vh 2vh;
+
+  transition: all 0.4s ease-in-out;
+}
+
+main #portfolio .sort-filters li a.active,
+main #portfolio .sort-filters li a:hover {  /* active filter & on-hover */
+  color: #444;
+  background: #CCC;
+}
+
+/*** Projects Grid ***/
+main #portfolio .project-grid {  /* project grid container (grid) */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1em;
+}
+main #portfolio .project-grid li a {  /* each item in the grid */
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  color: #FFF;
+  border-color: #FFF;
+
+  transition: all 0.2s ease-in-out;
+}
+
+main #portfolio .project-grid li a img {  /* project preview image */
+  width: 25vw;
+}
+
+main #portfolio .project-grid li a span {  /* text overlay (shaded container) */
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* Shade the image with an 80% opacity black color (mostly shaded) */
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.8);
+  /* Cover the entire container (the whole image) */
+  width: 100%;
+  height: 100%;
+
+  transition: all 0.3s ease-in-out;
+}
+main #portfolio .project-grid li a span h4 {  /* grid item title (overlay) */
+  /* Center title text */
+  display: flex;
+  justify-content: center;
+  /* Set width (making a FIXED "separator" line) */
+  width: 85%;
+
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  border-bottom: 1px solid;
+  border-color: inherit;
+
+  padding: 0 0 8px 0;
+  margin: 0 0 4px 0;
+}
+main #portfolio .project-grid li a span p {  /* item description (overlay) */
+  max-width: 80%;
+
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  text-align: center;
+}
+
+/* INTERACTIVE EFFECTS */
+main #portfolio .project-grid li a:hover {  /* hide text on-hover */
+  color: transparent;
+}
+main #portfolio .project-grid li a:hover span {  /* reveal image (un-shade) */
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0);
+}
