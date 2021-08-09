@@ -126,3 +126,62 @@ nav a.button {  /* button styles */
 nav a.button:hover {  /* on-hover */
   background: rgb(10, 90, 210);
 }
+
+
+
+/*********** Header Banner ***********/
+
+header {  /* container */
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+
+  background: linear-gradient(rgba(0, 0, 0, 0.75),
+                              rgba(20, 20, 20, 0.6)),
+              url('../images/header-bg.jpg')
+              no-repeat fixed center top transparent;
+
+  transition: height 0.6s ease-in-out 0.1s;
+}
+header h1 {  /* title (at the top) */
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 700;
+  font-size: 6rem;
+  text-transform: uppercase;
+  color: var(--color-palewhite);
+  margin: 6vh 0 0 0;
+
+  transition: font-size 0.15s ease-in-out;
+}
+header p {  /* subtitle (at the bottom) */
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 2.5rem;
+  color: var(--color-palewhite);
+
+  transition: font-size 0.4s ease-in-out 0.2s;
+}
+header img {  /* circular image (in the middle) */
+  margin: 3vh 0 4vh 0;
+  height: 35vh;
+  border: 1px solid var(--color-darkblue);
+  border-radius: 200px;
+
+  transition: height 0.4s ease-in-out 0.1s;
+}
+
+header a {  /* arrow (bottom) */
+  margin: 6vh 0 0 0;
+  color: var(--color-palewhite);
+
+  transition: all 0.5s;
+}
+header a:hover {  /* arrow on-hover */
+  color: white;
+}
+header a .fa-angle-down {  /* arrow size */
+  font-size: 8vh;
+}
