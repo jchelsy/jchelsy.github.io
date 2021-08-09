@@ -143,8 +143,6 @@ header {  /* container */
                               rgba(20, 20, 20, 0.6)),
               url('../images/header-bg.jpg')
               no-repeat fixed center top transparent;
-
-  transition: height 0.6s ease-in-out 0.1s;
 }
 header h1 {  /* title (at the top) */
   font-family: 'Source Sans Pro', sans-serif;
@@ -153,24 +151,18 @@ header h1 {  /* title (at the top) */
   text-transform: uppercase;
   color: var(--color-palewhite);
   margin: 6vh 0 0 0;
-
-  transition: font-size 0.15s ease-in-out;
 }
 header p {  /* subtitle (at the bottom) */
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   font-size: 2.5rem;
   color: var(--color-palewhite);
-
-  transition: font-size 0.4s ease-in-out 0.2s;
 }
 header img {  /* circular image (in the middle) */
   margin: 3vh 0 4vh 0;
   height: 35vh;
   border: 1px solid var(--color-darkblue);
   border-radius: 200px;
-
-  transition: height 0.4s ease-in-out 0.1s;
 }
 
 header a {  /* arrow (bottom) */
@@ -184,4 +176,51 @@ header a:hover {  /* arrow on-hover */
 }
 header a .fa-angle-down {  /* arrow size */
   font-size: 8vh;
+}
+
+
+
+/******* [Main] Resume Section *******/
+
+main #resume {  /* container */
+  height: 50vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(rgba(0, 0, 0, 0.75),
+                              rgba(20, 20, 20, 0.4)),
+              url('../images/resume.jpg')
+              no-repeat fixed center center transparent;
+
+  /* Define the top margin (to account for sticky nav) */
+  scroll-margin-top: 10vh;
+}
+main #resume h1 {  /* section title */
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 400;
+  font-size: 7vh;
+  text-transform: uppercase;
+  color: var(--color-palewhite);
+
+  margin: 0 0 4vh 0;
+
+  transition: font-size 0.3s ease-in-out;
+}
+main #resume a {  /* link to resume */
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
+  font-size: 4vh;
+  color: var(--color-palewhite);
+  border: 2px solid var(--color-palewhite);
+
+  padding: 1vh 3vh;
+
+  transition: all 0.4s ease-in-out;
+}
+main #resume a:hover {  /* link on-hover */
+  background: var(--color-palewhite);
+  color: rgb(1, 30, 90);
 }
