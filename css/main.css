@@ -343,3 +343,74 @@ main #portfolio .project-grid li a:hover {  /* hide text on-hover */
 main #portfolio .project-grid li a:hover span {  /* reveal image (un-shade) */
   box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0);
 }
+
+
+
+/*************** Footer ***************/
+
+footer {  /* container */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #1F1F1F;
+  padding: 4em 0 2em 0;
+}
+footer h2 {  /* title */
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  font-size: 3rem;
+  text-transform: uppercase;
+  color: white;
+}
+footer h6 {  /* subtitle */
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: white;
+  padding: 1em 0;
+}
+footer h6 a {  /* subtitle link */
+  color: var(--color-blue);
+
+  transition: all 0.2s ease-in-out;
+}
+footer h6 a:hover {  /* subtitle link (on-hover) */
+  color: rgba(10, 150, 225, 0.8);
+  text-decoration: underline;
+}
+footer p {  /* copyright message */
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 1em;
+  color: white;
+  padding: 2em 0 1em 0;
+}
+
+/*** Social Media Links ***/
+footer .social {  /* container */
+  display: flex;
+}
+footer .social a {  /* link */
+  margin: 0 4px;
+}
+footer .social a div {  /* square */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #2F2F2F;
+  width: 65px;
+  height: 65px;
+  font-size: 2em;
+  color: rgba(255, 255, 255, 0.8);
+
+  transition: all 0.3s ease-in-out;
+}
+footer .social a div i {  /* set icon size */
+  font-size: 36px;
+}
+
+/* INTERACTIVE EFFECTS */
+footer .social a:hover div {  /* change square color on-hover */
+  background-color: var(--color-blue);
+}
