@@ -33,21 +33,55 @@
           <p>Jonah Chelsy</p>
         </a>
 
+        <!-- "Hamburger" Menu Checkbox (for state triggers) -->
+        <!-- In tablet/mobile view, when the "hamburger" menu is pressed,
+             this keeps track of the pressed state (for opening/closing it) -->
+        <!-- A checkbox operates as an on/off state tracker without any JS! -->
+        <input type="checkbox" id="menu-btn" class="menu-btn" />
+
         <!-- Navigation -->
         <ul>
           <li><a href="#top">Home</a></li>
           <li><a href="#resume">About</a></li>
           <li><a href="#portfolio">Portfolio</a></li>
+          <!-- 'Contact' item (for mobile view) -->
+          <!-- This item is hidden until the screen width reaches 480px -->
+          <!-- At the 768px breakpoint (tablet), the nav menu converts to the
+               "hamburger" menu, but the separate 'Contact' button remains.
+               However, at the 480px breakpoint (mobile), the separate 'Contact'
+               button is hidden and this is added to the "Hamburger" menu! -->
+          <li><a href="#contact">Contact</a></li>
         </ul>
         <!-- Contact Button -->
+        <!-- This adds a separate 'Contact' button (separate from other nav menu
+             items). It remains visible until the mobile breakpoint occurs. -->
         <a class="button" href="#contact">Contact</a>
+
+        <!-- "Hamburger" Menu Button -->
+        <!-- Contains three <span> elements. Each <span> is styled into one of
+             the three horizontal lines in the "Hamburger" Menu icon. -->
+        <!-- The 'for' parameter connects the label to the '#menu-btn' checkbox.
+             This checks/unchecks each time the "Hamburger" Menu button (label)
+             is pressed (which in turn makes the menu open and close!) -->
+        <label for="menu-btn" class="menu-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
       </div>
     </nav>
 
     <!-- Header Banner -->
     <header>
+      <!--
+        The <header> acts as a Banner, which is composed of...
+        - A title (my name).
+        - A circular image (of myself).
+        - A subtitle (of my profession).
+        - An arrow at the bottom (which links to the next section).
+        -->
       <h1>Jonah Chelsy</h1>
-      <img src="images/profile-pic.jpg" alt="Jonah Chelsy">
+      <img src="images/profile-pic.jpg" alt="Jonah Chelsy" />
       <p>Software Engineer</p>
       <a href="#resume">
         <i class="fa fa-angle-down"></i>
@@ -60,6 +94,7 @@
       <section id="resume">
         <h1>Check Out My Resume!</h1>
         <!-- URL Redirect to Resume PDF -->
+        <!-- (currently, it only redirects to a blank PDF) -->
         <a href="https://jchelsy.github.io/resume.pdf" target="_blank">Resume</a>
       </section>
 
@@ -68,7 +103,9 @@
         <h1>Portfolio</h1>
 
         <!-- Filters to Sort Projects By -->
-        <!-- (Not yet implemented...) -->
+        <!-- [Not yet implemented...]
+              - I plan to use the Isotope JS library for the sorting/filtering.
+          -->
         <ul class="sort-filters">
           <li><a href="#" id="sort-all" class="active">All</a></li>
           <li><a href="#" id="sort-mobile">Mobile</a></li>
@@ -77,7 +114,10 @@
         </ul>
 
         <!-- Grid of All Projects -->
-        <!-- (Not yet implemented...) -->
+        <!-- [Not yet implemented...]
+              - Each #id attached to a (project) grid item is intended to serve
+                as an idea of which "filters" will be sorted with Isotope JS!
+          -->
         <ul class="project-grid">
           <li id="python">
             <a href="#">
@@ -125,6 +165,14 @@
 
     <!-- Footer ("Contact Me" Section) -->
     <footer id="contact">
+      <!--
+        The <footer> is composed of...
+        - A title ("Contact Me")
+        - A subtitle right below, giving a "mailto" link to my email address.
+        - Links to my social media profiles.
+
+        - The social links go to each site's homepage (not yet my real profiles)
+        -->
       <h2>Contact Me</h2>
       <h6>
         Feel free to
