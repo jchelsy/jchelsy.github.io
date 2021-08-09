@@ -91,7 +91,7 @@ nav .logo p {  /* name text */
 
 
 /*** Navigation ***/
-nav ul {
+nav ul {  /* list of nav items */
   display: flex;
   align-items: center;
 }
@@ -110,6 +110,11 @@ nav ul li a:hover {  /* on-hover */
   color: var(--color-blue);
 }
 
+nav ul li:last-of-type {  /* Hide 'Contact' item (Explanation in HTML) */
+  display: none;
+}
+
+
 /*** 'Contact' Button (Separate) ***/
 nav a.button {  /* button styles */
   font-family: 'Source Sans Pro', sans-serif;
@@ -125,6 +130,40 @@ nav a.button {  /* button styles */
 }
 nav a.button:hover {  /* on-hover */
   background: rgb(10, 90, 210);
+}
+
+
+/*** "Hamburger" Menu Button ***/
+nav .menu-icon {  /* Hide the icon (Explanation in HTML) */
+  display: none;
+  position: absolute;
+}
+nav .menu-icon span {  /* Style the "Hamburger" (three horizontal lines) */
+  display: block;
+  width: 30px;
+  height: 4px;
+  margin: 4px auto;
+  border-radius: 5px;
+  background-color: var(--color-white);
+
+  transition: all 0.3s ease-in-out;
+  transform-origin: left center;
+}
+
+nav .menu-btn {  /* Hide checkbox (used for state trigger) */
+  display: none;
+}
+
+/* Click Animation */
+nav .menu-btn:checked ~ .menu-icon span:nth-child(1) {  /* top line */
+  transform: translateY(-2px) rotate(45deg);
+}
+nav .menu-btn:checked ~ .menu-icon span:nth-child(2) {  /* middle line */
+  opacity: 0;
+  width: 0;
+}
+nav .menu-btn:checked ~ .menu-icon span:nth-child(3) {  /* bottom line */
+  transform: translateY(3px) rotate(-45deg);
 }
 
 
@@ -413,4 +452,124 @@ footer .social a div i {  /* set icon size */
 /* INTERACTIVE EFFECTS */
 footer .social a:hover div {  /* change square color on-hover */
   background-color: var(--color-blue);
+}
+
+
+
+/*********** Media Queries ***********/
+
+@media screen and (max-width: 768px) {
+
+  /*** Navigation Menu ***/
+  nav ul {  /* Format nav menu to fit in the "Hamburger" menu */
+    flex-direction: column;
+    justify-content: space-around;
+
+    top: 10vh;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+
+    max-height: 0;
+    height: 90vh;
+    width: auto;
+
+    transition: max-height 0.4s ease-in-out;
+
+    background-color: rgba(0, 25, 50, 1);
+    position: fixed;
+  }
+  nav ul li a {  /* nav item link (set font size) */
+    font-size: 3rem;
+  }
+
+  /*** "Hamburger" Menu Button ***/
+  nav .menu-icon {  /* Reveal the icon (Explanation in HTML) */
+    display: block;
+    position: relative;
+    cursor: pointer;
+  }
+  nav .menu-btn:checked ~ ul {  /* <ul> styles (when menu is open) */
+    /* Change max-height to 90vh (from 0vh)
+       to open the menu (with animation) */
+    max-height: 90vh;
+  }
+
+  /*** Header Banner ***/
+  header h1 {  /* header title */
+    font-size: 4rem;
+    margin: 4vh 0 0 0;
+  }
+  header p {  /* header subtitle */
+    font-size: 1.8rem;
+  }
+  header img {  /* circular image */
+    height: 24vh;
+    margin: 2vh 0 3vh 0;
+  }
+  header a {  /* arrow icon */
+    margin: 3vh 0 0 0;
+  }
+  header a .fa-angle-down {  /* set arrow size */
+    font-size: 6vh;
+  }
+
+  /*** Miscellaneous ***/
+  header {  /* Header (set height) */
+    height: 60vh;
+  }
+  main #resume {
+    height: 30vh;
+  }
+  main #resume h1 {
+    font-size: 5vh;
+  }
+  main #resume a {
+    font-size: 3vh;
+    padding: 0.8vh 2.5vh;
+  }
+}
+
+
+@media screen and (max-width: 480px) {
+
+  /*** Navigation Menu ***/
+  nav ul li a {
+    font-size: 2.5rem;
+  }
+
+  nav ul li:last-of-type {  /* Reveal 'Contact' item in NAV MENU */
+    display: block;
+  }
+  nav a.button {  /* Hide SEPARATE 'Contact' Button (Explained in HTML) */
+    display: none;
+  }
+
+  /*** Header Banner ***/
+  header h1 {  /* header title */
+    font-size: 3.4rem;
+    margin: 2vh 0 0 0;
+  }
+  header p {  /* header subtitle */
+    font-size: 1.4rem;
+  }
+  header img {  /* circular image */
+    height: 16vh;
+    margin: 1vh 0 2vh 0;
+  }
+  header a {  /* arrow icon */
+    margin: 2vh 0 0 0;
+  }
+  header a .fa-angle-down {  /* set arrow size */
+    font-size: 4vh;
+  }
+
+  /*** Miscellaneous ***/
+  main #resume h1 {  /* Resume section title (set font size) */
+    font-size: 4vh;
+  }
+  main #resume a {  /* Resume section link */
+    font-size: 2.5vh;
+    padding: 0.6vh 2vh;
+  }
 }
